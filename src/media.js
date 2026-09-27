@@ -50,3 +50,12 @@ export function obterSituacao(media) {
 
   return 'Reprovado';
 }
+
+/**
+Formata a média com uma casa decimal e vírgula como separador decimal.*
+@param {number} media
+@returns {string}
+*/
+export function formatarMedia(media) {
+  return media.toFixed(1).replace('.', ',');
+}

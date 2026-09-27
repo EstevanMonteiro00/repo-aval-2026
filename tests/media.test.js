@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import { describe, test } from 'node:test';
-import { calcularMedia, obterSituacao } from '../src/media.js';
+import { calcularMedia, formatarMedia, obterSituacao } from '../src/media.js';
 
 describe('calcularMedia', () => {
   test('retorna a própria nota quando há apenas uma', () => {
@@ -62,5 +62,23 @@ describe('obterSituacao', () => {
 
   test('retorna "Reprovado" para média abaixo de 5', () => {
     assert.equal(obterSituacao(4.9), 'Reprovado');
+  });
+});
+
+ describe('formatarMedia', () => {
+  test('formata média decimal com uma casa', () => {
+    assert.equal(formatarMedia(7.666666666666667), '7,7');
+  });
+
+  test('formata número inteiro com uma casa decimal', () => {
+    assert.equal(formatarMedia(7), '7,0');
+  });
+
+  test('formata nota máxima', () => {
+    assert.equal(formatarMedia(10), '10,0');
+  });
+
+  test('arredonda a média para uma casa decimal', () => {
+    assert.equal(formatarMedia(5.25), '5,3');
   });
 });
