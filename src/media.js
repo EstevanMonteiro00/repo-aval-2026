@@ -1,4 +1,10 @@
-import { MEDIA_APROVACAO, MEDIA_RECUPERACAO, NOTA_MAXIMA, NOTA_MINIMA } from './config.js';
+import {
+  MEDIA_APROVACAO,
+  MEDIA_DISTINCAO,
+  MEDIA_RECUPERACAO,
+  NOTA_MAXIMA,
+  NOTA_MINIMA
+} from './config.js';
 
 /**
  * Indica se o valor é uma nota válida: um número entre NOTA_MINIMA e NOTA_MAXIMA.
@@ -25,7 +31,9 @@ export function calcularMedia(notas) {
 
   if (indiceNotaInvalida !== -1) {
     const nota = notas[indiceNotaInvalida];
-    throw new Error(`Nota inválida: ${nota}. Use valores entre ${NOTA_MINIMA} e ${NOTA_MAXIMA}.`);
+    throw new Error(
+      `Nota inválida: ${nota}. Use valores entre ${NOTA_MINIMA} e ${NOTA_MAXIMA}.`
+    );
   }
 
   const soma = notas.reduce((total, nota) => total + nota, 0);
@@ -37,9 +45,13 @@ export function calcularMedia(notas) {
  * Retorna a situação do aluno de acordo com a média.
  *
  * @param {number} media
- * @returns {string} "Aprovado", "Recuperação" ou "Reprovado"
+ * @returns {string}
  */
 export function obterSituacao(media) {
+  if (media >= MEDIA_DISTINCAO) {
+    return 'Aprovado com distinção';
+  }
+
   if (media >= MEDIA_APROVACAO) {
     return 'Aprovado';
   }
@@ -52,10 +64,11 @@ export function obterSituacao(media) {
 }
 
 /**
-Formata a média com uma casa decimal e vírgula como separador decimal.*
-@param {number} media
-@returns {string}
-*/
+ * Formata a média com uma casa decimal e vírgula como separador decimal.
+ *
+ * @param {number} media
+ * @returns {string}
+ */
 export function formatarMedia(media) {
   return media.toFixed(1).replace('.', ',');
 }
