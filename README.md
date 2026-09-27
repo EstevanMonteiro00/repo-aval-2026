@@ -19,7 +19,7 @@ Conventional Commits, merges, resolução de conflitos, versionamento e Pull Req
 | Nome | Usuário do GitHub |
 | ---- | ----------------- |
 | Estevan Monteiro | @EstevanMonteiro00 |
-|  |  |
+| Lucas Silva | @Lucasslva08  |
 
 ## Sumário
 
