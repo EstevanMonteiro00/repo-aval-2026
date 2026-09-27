@@ -21,6 +21,10 @@ describe('calcularMedia', () => {
 });
 
 describe('obterSituacao', () => {
+  test('retorna "Aprovado" para média exatamente 7', () => {
+    assert.equal(obterSituacao(7), 'Aprovado');
+  });
+
   test('retorna "Aprovado" para média acima da média de aprovação', () => {
     assert.equal(obterSituacao(8.5), 'Aprovado');
   });
