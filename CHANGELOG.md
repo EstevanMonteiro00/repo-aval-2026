@@ -21,7 +21,6 @@ e o projeto adota o [Versionamento Semântico](https://semver.org/lang/pt-BR/).
 
 - Situação de alunos com média exatamente 7,0.
 
-
 ## [1.0.0] - 2026-09-14
 
 ### Adicionado
