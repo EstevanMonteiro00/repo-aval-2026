@@ -16,8 +16,11 @@ Conventional Commits, merges, resolução de conflitos, versionamento e Pull Req
 
 **Nome da equipe:**
 
+Nome da equipe: Média Masters
+
 | Nome | Usuário do GitHub |
-| ---- | ----------------- |
+| ---  | --- |
+| Estevan Monteiro | @estevancm |
 
 ## Sumário
 
